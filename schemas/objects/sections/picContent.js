@@ -1,212 +1,155 @@
 import React from 'react'
-import ConditionalFields from '../../util/conditional-field'
 import { AiFillPicture } from 'react-icons/ai'
 
 export default {
-    name: 'picContentSection',
-    title: 'Pic/Content Section',
-    type: 'object',
-    icon: AiFillPicture,
-    fields: [{
-            name: 'disabled',
-            title: 'Disable Section?',
-            type: 'boolean'
-        },
-        {
-            name: 'heading',
-            title: 'Heading',
-            type: 'string',
-            description: 'Used as the main heading of this section. use span to change the color of text headline <span>hightlight</span>'
-        },
-        {
-            name: 'mainContent',
-            title: 'Main Content',
-            type: 'richTextBlock'
-        },
-        {
-            name: 'padTop',
-            title: 'Add Top Padding?',
-            type: 'boolean',
-            initialValue: true
-        },
-        {
-            name: 'padBottom',
-            title: 'Add Bottom Padding?',
-            type: 'boolean'
-        },
-        {
-            title: 'Select the Pic type',
-            name: 'picType',
-            type: 'object',
-
-            fields: [{
-                name: 'picLocation',
-                title: 'Picture Location',
-                type: 'string',
-                initialValue: 'leftPic',
-                options: {
-                    list: [
-                        { title: 'Left Side Pic', value: 'leftPic' },
-                        { title: 'Right Side Pic', value: 'rightPic' },
-                        { title: 'Top Side Pic', value: 'topPic' }
-                    ],
-                    layout: 'radio'
-                }
-            }]
-        },
-        {
-            name: 'picImages',
-            type: 'array',
-            title: 'Images For Content post',
-            description: 'Max of 3 images. The one on the top is the main. 2nd Image secondary and third is the smallest',
-            of: [{ type: 'mainImage' }],
-            validation: Rule => Rule.max(3)
-        },
-        {
-            name: 'picIcons',
-            type: 'object',
-
-            // options: {
-            //     collapsible: true, // Makes the whole fieldset collapsible
-            //     collapsed: false // Defines if the fieldset should be collapsed by default or not
-            //         // columns: 2 // Defines a grid for the fields and how many columns it should have
-            // },
-            inputComponent: ConditionalFields,
-
-            fields: [{
-                name: 'icons',
-                type: 'array',
-                title: 'Icons For Images (Optional)',
-                description: 'These are icons that go on the pics',
-                of: [{ type: 'icon' }],
-                validation: Rule => Rule.max(4)
-            }],
-            options: {
-                condition: (document, context) =>
-                    context().picType.picLocation === 'leftPic' ||
-                    context().picType.picLocation === 'rightPic'
-            }
-        },
-        {
-            type: 'bckgrdColorBlock',
-            name: 'bkgrdOpts',
-            title: 'Background Options',
-            inputComponent: ConditionalFields,
-            // fields: [{
-            //         description: 'Pick a color this is optional',
-            //         name: 'backgroundColor',
-            //         title: 'Background Color',
-            //         type: 'colorlist', // required
-            //         options: {
-            //             borderradius: {
-            //                 outer: '100%',
-            //                 inner: '100%'
-            //             },
-            //             list: [{
-            //                     title: 'purple',
-            //                     value: '#968dff'
-            //                 },
-
-            //                 {
-            //                     title: 'purple-light',
-            //                     value: '#e9e8ff'
-            //                 },
-            //                 {
-            //                     title: 'teal',
-            //                     value: '#81f9fd'
-            //                 },
-            //                 {
-            //                     title: 'blue',
-            //                     value: '#a8ddfb'
-            //                 },
-
-            //                 {
-            //                     title: 'seafoam',
-            //                     value: '#00f8f1'
-            //                 },
-            //                 {
-            //                     title: 'seafoam-light',
-            //                     value: '#c3ffe2'
-            //                 },
-            //                 {
-            //                     title: 'orange',
-            //                     value: '#ff8000'
-            //                 },
-            //                 {
-            //                     title: 'orange-light',
-            //                     value: '#fdc791'
-            //                 },
-            //                 {
-            //                     title: 'ceren-orange',
-            //                     value: '#fbaa62'
-            //                 },
-            //                 {
-            //                     title: 'hot-pink',
-            //                     value: '#ff0dcb'
-            //                 },
-            //                 {
-            //                     title: 'hot-pink-light',
-            //                     value: '#ff7be3'
-            //                 },
-            //                 {
-            //                     title: 'pink-medium-light',
-            //                     value: '#ffc9f4'
-            //                 },
-            //                 {
-            //                     title: 'pink-extra-light',
-            //                     value: '#ffecf8'
-            //                 },
-            //                 {
-            //                     title: 'pink-alt',
-            //                     value: '#fcd6ce'
-            //                 },
-            //                 {
-            //                     title: 'yellow',
-            //                     value: '#fffc00'
-            //                 },
-            //                 {
-            //                     title: 'yellow-orange',
-            //                     value: '#ffd400'
-            //                 },
-            //                 {
-            //                     title: 'grey3',
-            //                     value: '#9b9b9b'
-            //                 },
-            //                 {
-            //                     title: 'grey5',
-            //                     value: '#4a4a4a'
-            //                 },
-
-            //                 { title: 'White', value: 'white' }
-            //             ]
-            //         }
-            //     },
-            //     {
-            //         name: 'customColor',
-
-            //         title: 'Custom Background Color',
-            //         description: 'This uses a hex color',
-            //         type: 'string' // make this a background choose your own
-            //     }
-            // ],
-            options: {
-                condition: (document, context) =>
-                    context().picType.picLocation === 'leftPic' ||
-                    context().picType.picLocation === 'rightPic'
-            }
-        }
-    ],
-    preview: {
-        select: {
-            title: 'heading',
-            disabled: 'disabled',
-            location: 'picType.picLocation'
-        },
-        prepare({ title, disabled, location }) {
-            return {
-                title: `${disabled ? 'DISABLED: ' : ''} ${'Pic/Content: ' + title + ': ' + location ||
-          'Pic/Content' + location}`
-            }
-        }
+  name: 'picContentSection',
+  title: 'Pic/Content Section',
+  type: 'object',
+  icon: AiFillPicture,
+  fieldsets: [
+    {
+      name: 'topText',
+      title: 'Top Text',
+    },
+    {
+      name: 'whiteContent',
+      title: 'White Section Content',
+    },
+    {
+      name: 'sideContent',
+      title: 'Side Content',
+      description: 'The overlay Side Section',
     }
+  ],
+  fields: [
+    {
+      name: 'disabled',
+      title: 'Disable Section?',
+      type: 'boolean'
+    },
+    {
+      name: 'imageSize',
+      title: 'Main image Size',
+      type: 'string',
+      initialValue: 'center',
+      options: {
+        list: [
+          { title: 'Full Screen Pic with Content', value: 'FullScreenPic' },
+          { title: 'Full Screen Pic with You Tube & Content', value: 'FullScreenPicVideo' },
+          { title: 'Fixed Size Pic with Content', value: 'FixedSizePic' }
+        ],
+        layout: 'radio'
+      }
+    },
+    {
+      name: 'contentLocation',
+      title: 'Content Location',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Left White Content', value: 'leftContent' },
+          { title: 'Right White Content', value: 'rightContent' }
+        ],
+        layout: 'radio'
+      },
+      hidden: ({ parent }) =>
+        parent.imageSize !== 'FullScreenPic' || parent.imageSize !== 'FullScreenPicVideo'
+    },
+    {
+      name: 'picLocation',
+      title: 'Picture Location',
+      type: 'string',
+      initialValue: 'leftPic',
+      options: {
+        list: [
+          { title: 'Left Side Pic', value: 'leftPic' },
+          { title: 'Right Side Pic', value: 'rightPic' }
+        ],
+        layout: 'radio'
+      },
+      hidden: ({ parent }) => parent.imageSize !== 'FixedSizePic'
+    },
+    {
+      name: 'mainImage',
+      type: 'mainImage',
+      title: 'Main Image For this Section'
+    },
+    {
+      name: 'topTextBlurb',
+      title: 'Top Text Blurb',
+      type: 'text',
+      rows: 2,
+      fieldset: 'topText',
+      description: 'Used as the main heading of the White Section',
+       hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+    },
+
+    {
+      name: 'topTextCta',
+      title: 'Top Text Cta',
+      type: 'cta',
+      fieldset: 'topText',
+      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+    },
+    {
+      name: 'heading',
+      title: 'Main Heading ',
+      type: 'string',
+      fieldset: 'whiteContent',
+      description: 'Used as the main heading of the White Section',
+      hidden: ({ parent }) =>
+        parent.imageSize !== 'FullScreenPic' && parent.imageSize !== 'FullScreenPicVideo'
+    },
+
+    {
+      name: 'mainContent',
+      title: 'Main Content Blurb',
+      type: 'excerptPortableText',
+      fieldset: 'whiteContent',
+      hidden: ({ parent }) =>
+        parent.imageSize !== 'FullScreenPic' && parent.imageSize !== 'FullScreenPicVideo'
+    },
+    {
+      name: 'youTubeLink',
+      title: 'Watch Section',
+      type: 'string',
+      fieldset: 'whiteContent',
+      description: 'Paste your YouTube Link Below. Used for the Watch Section ',
+      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPicVideo'
+    },
+    {
+      name: 'sideSecHeading',
+      title: 'Side Section Heading ',
+      type: 'string',
+      fieldset: 'sideContent',
+      description: 'Used as the main heading of the overlay Side Section',
+      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+    },
+
+    {
+      name: 'sideSecBlurb',
+      title: 'Side Section Blurb',
+      type: 'text',
+      rows: 2,
+      fieldset: 'sideContent',
+      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+    }
+  ],
+  preview: {
+    select: {
+      title: 'heading',
+      disabled: 'disabled',
+      location: 'contentLocation',
+      size: 'imageSize'
+    },
+    prepare({ title, disabled, location }) {
+      return {
+        title: `${disabled ? 'DISABLED: ' : ''} ${
+          title
+            ? 'Pic/Content: ' + title + ': ' + location + ': ' + size
+            : 'Pic/Content: ' + location + ': ' + size
+        }`
+      }
+    }
+  }
 }

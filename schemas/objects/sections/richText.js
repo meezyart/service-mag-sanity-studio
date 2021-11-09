@@ -1,7 +1,10 @@
+import {MdTextFields} from 'react-icons/md'
+
 export default {
   name: 'richTextSection',
   title: 'Rich Text',
   type: 'object',
+  icon: MdTextFields,
   fields: [
     {
       name: 'disabled',
@@ -17,7 +20,7 @@ export default {
     {
       name: 'mainContent',
       title: 'Main Content',
-      type: 'richTextBlock'
+      type: 'excerptPortableText'
     }
   ],
   preview: {

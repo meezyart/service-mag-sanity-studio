@@ -16,7 +16,7 @@ export default {
     {
       name: 'youTubeHandle',
       title: 'YouTube Handle',
-      description: 'the name after slash youtube.com/hipline" example: hipline',
+      description: 'the name after slash youtube.com/servicenow" example: servicenow',
       type: 'string'
     }
   ],

@@ -1,4 +1,5 @@
 import { FiLink, FiExternalLink } from 'react-icons/fi'
+import { FaListUl,FaList} from 'react-icons/fa'
 
 export default {
   name: 'richTextBlock',
@@ -36,9 +37,21 @@ export default {
       ],
       lists: [
         {
-          title: 'Bullet',
-          value: 'bullet'
+          title: 'Green Bullets',
+          value: 'greenBullet',
+          blockEditor: {
+            icon: FaListUl
+          }
         },
+        {
+          title: 'Regular Bullets',
+          value: 'bullet',
+
+          blockEditor: {
+            icon: FaList
+          }
+        },
+
         {
           title: 'Number',
           value: 'number'
@@ -71,8 +84,8 @@ export default {
                 to: [{ type: 'article' }, { type: 'page' }]
               },
               {
-                title: 'Style as Button?',
-                name: 'isButton',
+                title: 'Style with Arrow?',
+                name: 'isArrow',
                 type: 'boolean'
               }
             ]
@@ -92,8 +105,8 @@ export default {
                 description: 'This link will open in a new tab.'
               },
               {
-                title: 'Style as Button?',
-                name: 'isButton',
+                title: 'Style with Arrow?',
+                name: 'isArrow',
                 type: 'boolean'
               }
             ]

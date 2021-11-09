@@ -1,7 +1,7 @@
 export default {
     name: 'contactBlock',
     type: 'object',
-
+    title: 'Contact ',
     fields: [{
             name: 'disabled',
             title: 'Disable Section?',

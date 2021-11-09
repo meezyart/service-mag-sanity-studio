@@ -56,11 +56,7 @@ export default {
       },
       validation: Rule => Rule.unique()
     } // You can add videos to Open Graph tags too
-    // {
-    //     name: 'video',
-    //     title: 'Video',
-    //     type: 'mux.video'
-    // }
+
   ],
   preview: {
     select: {

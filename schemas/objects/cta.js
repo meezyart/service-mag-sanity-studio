@@ -30,7 +30,7 @@ export default {
             title: 'External link',
             name: 'link',
             type: 'string',
-            description: 'Example: https://www.myhipline.com',
+            description: 'Example: https://www.servicenow.com',
             fieldset: 'link',
             validation: Rule => Rule.uri({ scheme: ['tel', 'mailto', 'http', 'https'] })
         },

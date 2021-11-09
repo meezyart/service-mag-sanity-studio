@@ -14,22 +14,22 @@ export default {
                 type: 'menu'
             }]
         },
-        {
-            name: 'loginInfo',
-            title: 'Login Information',
-            type: 'object',
-            fields: [{
-                name: 'showLogin',
-                title: 'Show Login Button',
-                description: '',
-                type: 'boolean'
-            }, {
-                name: 'showCart',
-                title: 'Show Cart Button',
-                description: '',
-                type: 'boolean'
-            }]
-        },
+        // {
+        //     name: 'loginInfo',
+        //     title: 'Login Information',
+        //     type: 'object',
+        //     fields: [{
+        //         name: 'showLogin',
+        //         title: 'Show Login Button',
+        //         description: '',
+        //         type: 'boolean'
+        //     }, {
+        //         name: 'showCart',
+        //         title: 'Show Cart Button',
+        //         description: '',
+        //         type: 'boolean'
+        //     }]
+        // },
         {
             name: 'topCtaLink',
             title: 'Top Nav Button',

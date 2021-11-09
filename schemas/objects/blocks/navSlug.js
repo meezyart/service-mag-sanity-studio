@@ -21,6 +21,13 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Link SubText',
+      name: 'subText',
+      type: 'text',
+      rows: 2,
+      description: 'Text that flows below the link, ( Optional )'
+    },
+    {
       title: 'Path  (Internal Link)',
       name: 'slug',
       description: 'Example: /blog',

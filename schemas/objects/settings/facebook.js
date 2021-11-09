@@ -17,7 +17,7 @@ export default {
     {
       name: 'facebookHandle',
       title: 'Facebook Handle',
-      description: 'the name after slash facebook.com/hipline" example: hipline',
+      description: 'the name after slash facebook.com/servicenow" example: servicenow',
       type: 'string'
     }
   ],

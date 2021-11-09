@@ -16,7 +16,7 @@ export default {
     {
       name: 'twitterHandle',
       title: 'Twitter Handle',
-      description: 'the name after slash Twitter.com/hipline" example: hipline',
+      description: 'the name after slash Twitter.com/servicenow" example: servicenow',
       type: 'string'
     }
   ],

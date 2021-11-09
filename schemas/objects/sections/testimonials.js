@@ -38,12 +38,12 @@ export default {
         //     description: 'This is optional',
         //     type: 'excerptPortableText'
         // },
-        {
-            name: 'bkgrdColor',
-            title: 'Section Background Color',
-            description: 'This is optional default is #f5f5f5',
-            type: 'bckgrdColorBlock'
-        },
+        // {
+        //     name: 'bkgrdColor',
+        //     title: 'Section Background Color',
+        //     description: 'This is optional default is #f5f5f5',
+        //     type: 'bckgrdColorBlock'
+        // },
         {
             name: 'testimonials',
             title: 'Testimonials Blocks',

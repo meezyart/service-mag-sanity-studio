@@ -1,6 +1,7 @@
 export default {
     name: 'icon',
     type: 'object',
+    title: 'Main Icon',
     options: {
         collapsible: true, // Makes the whole fieldset collapsible
         collapsed: false // Defines if the fieldset should be collapsed by default or not
@@ -18,7 +19,7 @@ export default {
             description: 'can be any name to reference'
         },
         {
-            name: 'icon',
+            name: 'iconImg',
             type: 'image',
             title: 'Icon Image'
         },

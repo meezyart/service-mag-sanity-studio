@@ -21,12 +21,14 @@ import {
 // import SeoPreview from '../schemas/components/preview/seo-preview'
 
 import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/go'
+import { GiOpenBook, GiNotebook } from 'react-icons/gi'
 
 const hiddenDocTypes = listItem =>
     ![
         'post',
         'page',
         'menu',
+        'editions',
         'media.tag',
         'author',
         'category',
@@ -51,12 +53,29 @@ const hiddenDocTypes = listItem =>
 
 export default () =>
 S.list()
-    .title('Site Content')
+    .title('Work Flow Content')
     .items([
         // S.divider(),
+        S.documentTypeListItem('editions')
+        .title('Workflow Editions')
+        .icon(GiOpenBook),
+        // S.listItem()
+        // .title('Article Pages')
+        // .icon(MdCollectionsBookmark),
+        // .child(
+        //     S.list()
+        //     .title('Passes Sections')
+        //     .items([
+        //         S.documentList('page')
+        //         .schemaType('page')
+        //         .title('Article Pages')
+        //         .menuItems(S.documentTypeList('passesMenu').getMenuItems())
+        //         .filter('_type == "passBlock"')
+        //     ])
+        // ),
         S.documentTypeListItem('page')
-        .title('Pages')
-        .icon(MdDescription),
+        .title('Article Pages')
+        .icon(MdCollectionsBookmark),
         // Incoming
         ...S.documentTypeListItems().filter(hiddenDocTypes),
         // S.listItem()
@@ -97,7 +116,7 @@ S.list()
             .items([
                 S.documentTypeListItem('article')
                 .title('All Articles')
-                .icon(MdCollectionsBookmark),
+                .icon(MdCollectionsBookmark)
                 // S.listItem()
                 // .title('Articles By Category')
                 // .icon(MdCollectionsBookmark)
@@ -245,15 +264,15 @@ S.list()
                     .schemaType('settingsContactInfo')
                     .documentId('settingsContactInfo')
                 ),
-                S.listItem()
-                .title('Site Announcements')
-                .icon(MdHearing)
-                .child(
-                    S.document()
-                    .title('Site Announcements')
-                    .schemaType('settingsAnnouncements')
-                    .documentId('settingsAnnouncements')
-                ),
+                // S.listItem()
+                // .title('Site Announcements')
+                // .icon(MdHearing)
+                // .child(
+                //     S.document()
+                //     .title('Site Announcements')
+                //     .schemaType('settingsAnnouncements')
+                //     .documentId('settingsAnnouncements')
+                // ),
                 // S.listItem()
                 // .title('Cookie Constent')
                 // .icon(MdHearing)
