@@ -96,7 +96,7 @@ export default {
     prepare({ title, disabled, heroType }) {
       return {
         title: `${disabled ? 'DISABLED: ' : ''} ${
-          heroType ? heroType + ': ' + (title ? title : 'Hero Banner') : 'Hero Banner'
+          (title ? 'Hero Banner:' + title : 'Hero Banner')
         }`
       }
     }

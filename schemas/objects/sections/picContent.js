@@ -10,15 +10,27 @@ export default {
     {
       name: 'topText',
       title: 'Top Text',
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
     },
     {
       name: 'whiteContent',
       title: 'White Section Content',
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
     },
     {
       name: 'sideContent',
       title: 'Side Content',
       description: 'The overlay Side Section',
+       options: {
+        collapsible: true,
+        collapsed: false
+      }
     }
   ],
   fields: [
@@ -53,7 +65,7 @@ export default {
         layout: 'radio'
       },
       hidden: ({ parent }) =>
-        parent.imageSize !== 'FullScreenPic' || parent.imageSize !== 'FullScreenPicVideo'
+        parent.imageSize !== 'FullScreenPic' && parent.imageSize !== 'FullScreenPicVideo'
     },
     {
       name: 'picLocation',
@@ -81,7 +93,7 @@ export default {
       rows: 2,
       fieldset: 'topText',
       description: 'Used as the main heading of the White Section',
-       hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
     },
 
     {
@@ -93,7 +105,7 @@ export default {
     },
     {
       name: 'heading',
-      title: 'Main Heading ',
+      title: 'Main Headline ',
       type: 'string',
       fieldset: 'whiteContent',
       description: 'Used as the main heading of the White Section',
@@ -119,7 +131,7 @@ export default {
     },
     {
       name: 'sideSecHeading',
-      title: 'Side Section Heading ',
+      title: 'Side Section Headline',
       type: 'string',
       fieldset: 'sideContent',
       description: 'Used as the main heading of the overlay Side Section',
@@ -142,13 +154,13 @@ export default {
       location: 'contentLocation',
       size: 'imageSize'
     },
-    prepare({ title, disabled, location }) {
+    prepare({ title, disabled, location ,size}) {
+      if(!location) {
+        location = '';
+      }
       return {
-        title: `${disabled ? 'DISABLED: ' : ''} ${
-          title
-            ? 'Pic/Content: ' + title + ': ' + location + ': ' + size
-            : 'Pic/Content: ' + location + ': ' + size
-        }`
+        title: `${disabled ? 'DISABLED: ' : ''} ${ title ? 'Pic/Cont: ' + title + ': ' + location + ': ' + size
+            : 'Pic/Cont: ' + location + ': ' + size }`
       }
     }
   }

@@ -77,6 +77,14 @@ export default {
         document.pageTemplate !== 'Customer Showcase'
       // validation: Rule => Rule.required()
     },
+    {
+      name: 'mainImage',
+      type: 'mainImage',
+      title: 'Image for Background Hro',
+      description: 'This will be for the top nav background image',
+      hidden: ({ document }) =>
+        document.pageTemplate !== 'Partnering Together'
+    },
     // {
     //   title: 'Use Section title?',
     //   description:

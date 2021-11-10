@@ -44,7 +44,8 @@ export default {
     },
     {
       name: 'mainContent',
-      title: 'Main Content',
+      title: 'Main Content Second Column',
+      description: 'This goes in the Second Column',
       type: 'excerptPortableText'
     }
 

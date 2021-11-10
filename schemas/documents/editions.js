@@ -8,24 +8,27 @@ export default {
   fieldsets: [
     {
       title: 'Edition Cover',
-      name: 'cover'
-      // options: {
-      //     collapsible: true
-      // }
+      name: 'cover',
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
     },
     {
       title: 'Table Of Contents',
-      name: 'toc'
-      // options: {
-      //     collapsible: true
-      // }
+      name: 'toc',
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
     },
     {
       title: 'Visibility',
-      name: 'visibility'
-      // options: {
-      //     collapsible: true
-      // }
+      name: 'visibility',
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
     }
   ],
   fields: [
@@ -34,22 +37,7 @@ export default {
       title: 'Disable Edition?',
       type: 'boolean'
     },
-    {
-      name: 'title',
-      title: 'Edition Title',
-      description: ' Example Nov 2021. This is the subtitle on the Cover Page',
 
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      name: 'title',
-      title: 'Edition Title',
-      description: ' Example Nov 2021. This is the subtitle on the Cover Page',
-      fieldset: 'cover',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
     {
       name: 'slug',
       title: 'URL Slug',
@@ -69,6 +57,14 @@ export default {
         })
     },
     {
+      name: 'title',
+      title: 'Edition Title',
+      description: ' Example November 2021. This is the subtitle on the Cover Page',
+      fieldset: 'cover',
+      type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
       name: 'headline',
       title: 'Edition Main Headline',
       fieldset: 'cover',
@@ -76,14 +72,7 @@ export default {
       type: 'string'
       // validation: Rule => Rule.required()
     },
-    {
-      name: 'title',
-      title: 'Edition Title',
-      description: ' Example Nov 2021. This is the subtitle on the Cover Page',
-      fieldset: 'cover',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
+
     {
       name: 'subtitle',
       title: 'Edition Sub Title ',
@@ -95,7 +84,8 @@ export default {
     {
       name: 'introText',
       title: 'Edition Section Intro Text',
-      description: 'This Goes on the Left hand Side of Cover imaage',
+      fieldset: 'cover',
+      description: 'This Goes on the Left hand Side of Cover image',
       type: 'excerptPortableText'
     },
 
@@ -103,10 +93,35 @@ export default {
       name: 'tocTitle',
       title: 'Table of Contents Headline',
       description: 'Example: November Highlights',
-      fieldset: 'cover',
+      fieldset: 'toc',
       type: 'string'
     },
 
+    {
+      name: 'tocList',
+      type: 'array',
+      fieldset: 'toc',
+      title: 'Table of Contents List',
+      description: 'Add the Headline and Subtext For each',
+      of: [
+        {
+          type: 'navPage',
+          name: 'internal',
+
+          title: 'Link to Internal Page'
+        },
+        {
+          type: 'navLink',
+          name: 'external',
+          title: 'Link to External Page'
+        },
+        {
+          type: 'navSlug',
+          name: 'internalM',
+          title: 'Link to Internal Page ( manually )'
+        }
+      ]
+    },
     {
       name: 'articlePages',
       type: 'array',
