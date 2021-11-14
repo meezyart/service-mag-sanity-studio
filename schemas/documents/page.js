@@ -82,8 +82,7 @@ export default {
       type: 'mainImage',
       title: 'Image for Background Hro',
       description: 'This will be for the top nav background image',
-      hidden: ({ document }) =>
-        document.pageTemplate !== 'Partnering Together'
+      hidden: ({ document }) => document.pageTemplate !== 'Partnering Together'
     },
     // {
     //   title: 'Use Section title?',

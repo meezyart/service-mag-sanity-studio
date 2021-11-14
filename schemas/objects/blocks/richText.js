@@ -1,5 +1,5 @@
 import { FiLink, FiExternalLink } from 'react-icons/fi'
-import { FaListUl,FaList} from 'react-icons/fa'
+import { FaListUl, FaList } from 'react-icons/fa'
 
 export default {
   name: 'richTextBlock',

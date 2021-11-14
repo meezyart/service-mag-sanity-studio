@@ -18,7 +18,7 @@ export default {
       description: 'Text that flows below the link, ( Optional )'
     },
     {
-      title: 'Page',
+      title: 'page',
       name: 'page',
       type: 'reference',
       description: 'Select a page from the dropdown list.',

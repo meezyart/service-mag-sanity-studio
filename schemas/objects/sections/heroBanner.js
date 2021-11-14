@@ -28,7 +28,8 @@ export default {
     {
       name: 'subTitle',
       title: 'Hero Sub Title',
-      type: 'string'
+      type: 'text',
+      rows:'5'
     },
     {
       name: 'col1Content',

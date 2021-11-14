@@ -2,7 +2,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Documents
-import page from './documents/page'
+import articlePage from './documents/page'
 
 // workflow
 import editions from './documents/editions'
@@ -37,6 +37,7 @@ import excerptPortableText from './objects/blocks/excerptPortableText'
 import mainImage from './objects/blocks/mainImage'
 import openGraph from './objects/blocks/openGraph'
 import fileAsset from './objects/blocks/fileAsset'
+import linkList from './objects/blocks/linkList'
 import simpleSection from './objects/blocks/simpleSection'
 import navLink from './objects/blocks/navLink'
 import navPage from './objects/blocks/navPage'
@@ -60,7 +61,7 @@ export default createSchema({
     name: 'default',
     types: schemaTypes.concat([
         /* Documents */
-        page,
+        articlePage,
         sectionsHeader,
         sectionsFooter,
         sectionsMobile,
@@ -75,6 +76,7 @@ export default createSchema({
         settingsAnnouncements,
         settingsLogo,
         article,
+
         articleCategory,
         // Primitive
         contactBlock,
@@ -84,6 +86,7 @@ export default createSchema({
         iconBlock,
         testimonialSection,
         // Work Flow related
+        linkList,
         editions,
         navLink,
         navPage,

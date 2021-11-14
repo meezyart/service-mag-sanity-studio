@@ -27,7 +27,7 @@ export default {
       name: 'sideContent',
       title: 'Side Content',
       description: 'The overlay Side Section',
-       options: {
+      options: {
         collapsible: true,
         collapsed: false
       }
@@ -86,21 +86,30 @@ export default {
       type: 'mainImage',
       title: 'Main Image For this Section'
     },
+
     {
-      name: 'topTextBlurb',
-      title: 'Top Text Blurb',
+      name: 'sideSecBlurb',
+      title: 'Side Text Blurb',
       type: 'text',
-      rows: 2,
-      fieldset: 'topText',
-      description: 'Used as the main heading of the White Section',
+      rows: 4,
+      fieldset: 'sideContent',
+      description: 'Used as the main heading of the Black Section',
       hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
     },
 
     {
-      name: 'topTextCta',
-      title: 'Top Text Cta',
+      name: 'sideSecHeading',
+      title: 'Top Section Headline',
+      type: 'string',
+      fieldset: 'whiteContent',
+      description: 'Used as the main heading of the overlay White Section',
+      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+    },
+    {
+      name: 'sideSecCta',
+      title: 'Side Section Cta',
       type: 'cta',
-      fieldset: 'topText',
+      fieldset: 'sideContent',
       hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
     },
     {
@@ -129,23 +138,8 @@ export default {
       description: 'Paste your YouTube Link Below. Used for the Watch Section ',
       hidden: ({ parent }) => parent.imageSize !== 'FullScreenPicVideo'
     },
-    {
-      name: 'sideSecHeading',
-      title: 'Side Section Headline',
-      type: 'string',
-      fieldset: 'sideContent',
-      description: 'Used as the main heading of the overlay Side Section',
-      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
-    },
 
-    {
-      name: 'sideSecBlurb',
-      title: 'Side Section Blurb',
-      type: 'text',
-      rows: 2,
-      fieldset: 'sideContent',
-      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
-    }
+    
   ],
   preview: {
     select: {
@@ -154,13 +148,16 @@ export default {
       location: 'contentLocation',
       size: 'imageSize'
     },
-    prepare({ title, disabled, location ,size}) {
-      if(!location) {
-        location = '';
+    prepare({ title, disabled, location, size }) {
+      if (!location) {
+        location = ''
       }
       return {
-        title: `${disabled ? 'DISABLED: ' : ''} ${ title ? 'Pic/Cont: ' + title + ': ' + location + ': ' + size
-            : 'Pic/Cont: ' + location + ': ' + size }`
+        title: `${disabled ? 'DISABLED: ' : ''} ${
+          title
+            ? 'Pic/Cont: ' + title + ': ' + location + ': ' + size
+            : 'Pic/Cont: ' + location + ': ' + size
+        }`
       }
     }
   }

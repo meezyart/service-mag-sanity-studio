@@ -54,7 +54,8 @@ export default {
             return 'Cannot be /'
           }
           return true
-        })
+        }),
+      validation: Rule => Rule.required()
     },
     {
       name: 'title',
@@ -103,24 +104,7 @@ export default {
       fieldset: 'toc',
       title: 'Table of Contents List',
       description: 'Add the Headline and Subtext For each',
-      of: [
-        {
-          type: 'navPage',
-          name: 'internal',
-
-          title: 'Link to Internal Page'
-        },
-        {
-          type: 'navLink',
-          name: 'external',
-          title: 'Link to External Page'
-        },
-        {
-          type: 'navSlug',
-          name: 'internalM',
-          title: 'Link to Internal Page ( manually )'
-        }
-      ]
+      of: [ { type: 'navPage' }, { type: 'navSlug' },{ type: 'navLink' }]
     },
     {
       name: 'articlePages',
