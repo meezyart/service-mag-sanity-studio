@@ -46,14 +46,15 @@ export default {
       // hidden: ({ parent }) => parent.heroType !== 'Two Col Hero'
     },
     {
-      name: 'links',
+      name: 'link',
       title: 'Add Link Under Text',
       description:
         'Add, edit, and reorder links in the section , this will render a green arrow link ( max 2)',
-      type: 'array',
-      validation: Rule => Rule.max(2),
-      of: [{ type: 'navLink' }, { type: 'navPage' }, { type: 'navSlug' }]
+      type: 'cta',
+      // validation: Rule => Rule.max(2),
+      // of: [{ type: 'navLink' }, { type: 'navPage' }, { type: 'navSlug' }]
     },
+   
 
     // {
     //   name: 'linkType',
