@@ -112,7 +112,7 @@ export default {
       fieldset: 'toc',
       title: 'Table of Contents List',
       description: 'Add the Headline and Subtext For each',
-      of: [ { type: 'navPage' }, { type: 'navSlug' },{ type: 'navLink' }]
+      of: [{ type: 'navPage' }, { type: 'navSlug' }, { type: 'navLink' }]
     },
     {
       name: 'articlePages',
@@ -125,6 +125,15 @@ export default {
           to: [{ type: 'page' }]
         }
       ]
+    },
+
+    {
+      name: 'menuImage',
+      type: 'mainImage',
+      title: 'Image For the Top Menu',
+      fieldset: 'cover',
+      description: 'Used as Photo for TOP MENU  of the Cover Page',
+      // validation: Rule => Rule.required()
     },
 
     {
