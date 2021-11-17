@@ -49,6 +49,7 @@ import richTextSection from './objects/sections/richText'
 import testimonialSection from './objects/sections/testimonials'
 import latestArticlesSection from './objects/sections/latestArticles'
 import heroSection from './objects/sections/heroBanner'
+import tomSection from './objects/sections/timeOfMind'
 
 
 import menuItem from './objects/menuItem'
@@ -67,7 +68,7 @@ export default createSchema({
         sectionsMobile,
         menu,
         route,
-
+        tomSection,
         settingsSeo,
         settingsFavicons,
         settingsSocial,

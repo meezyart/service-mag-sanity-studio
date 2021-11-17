@@ -28,6 +28,11 @@ export default {
       description: 'Text that flows below the link, ( Optional )'
     },
     {
+      name:'linkColor',
+      type:'string',
+      description: 'This is used for the Table of content link color'
+    },
+    {
       title: 'Path  (Internal Link)',
       name: 'slug',
       description: 'Example: /blog',

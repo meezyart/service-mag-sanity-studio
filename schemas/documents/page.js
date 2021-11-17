@@ -125,10 +125,10 @@ export default {
 
         {
           type: 'dykSection'
-        }
-        // {
-        //     type: 'testimonialSection'
-        // },
+        },
+        {
+            type: 'tomSection'
+        },
         // {
         //     type: 'timelineSection'
         // },
