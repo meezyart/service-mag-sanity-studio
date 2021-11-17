@@ -18,6 +18,13 @@ export default {
       description: 'Text that flows below the link, ( Optional )'
     },
     {
+      title: 'Link Color',
+      name: 'linkColor',
+      type: 'string',
+      description: 'To change the Color of the home Links',
+      // validation: Rule => Rule.required()
+    },
+    {
       title: 'page',
       name: 'page',
       type: 'reference',
