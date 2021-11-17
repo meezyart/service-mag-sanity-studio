@@ -83,6 +83,14 @@ export default {
       // validation: Rule => Rule.required()
     },
     {
+      name: 'mainImage',
+      type: 'mainImage',
+      title: 'Main Edition Cover Image',
+      fieldset: 'cover',
+      description: 'Used as Photo for the Cover Page',
+      validation: Rule => Rule.required()
+    },
+    {
       name: 'introText',
       title: 'Edition Section Intro Text',
       fieldset: 'cover',

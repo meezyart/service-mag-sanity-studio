@@ -47,8 +47,8 @@ export default {
       options: {
         list: [
           { title: 'Full Screen Pic with Content', value: 'FullScreenPic' },
-          { title: 'Full Screen Pic with You Tube & Content', value: 'FullScreenPicVideo' },
-          { title: 'Fixed Size Pic with Content', value: 'FixedSizePic' }
+          { title: 'Full Screen Pic with You Tube & Content', value: 'FullScreenPicVideo' }
+          // { title: 'Fixed Size Pic with Content', value: 'FixedSizePic' }
         ],
         layout: 'radio'
       }
@@ -59,28 +59,28 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Left White Content', value: 'leftContent' },
-          { title: 'Right White Content', value: 'rightContent' }
+          { title: 'Left White Content', value: 'left' },
+          { title: 'Right White Content', value: 'right' }
         ],
         layout: 'radio'
       },
       hidden: ({ parent }) =>
         parent.imageSize !== 'FullScreenPic' && parent.imageSize !== 'FullScreenPicVideo'
     },
-    {
-      name: 'picLocation',
-      title: 'Picture Location',
-      type: 'string',
-      initialValue: 'leftPic',
-      options: {
-        list: [
-          { title: 'Left Side Pic', value: 'leftPic' },
-          { title: 'Right Side Pic', value: 'rightPic' }
-        ],
-        layout: 'radio'
-      },
-      hidden: ({ parent }) => parent.imageSize !== 'FixedSizePic'
-    },
+    // {
+    //   name: 'picLocation',
+    //   title: 'Picture Location',
+    //   type: 'string',
+    //   initialValue: 'leftPic',
+    //   options: {
+    //     list: [
+    //       { title: 'Left Side Pic', value: 'leftPic' },
+    //       { title: 'Right Side Pic', value: 'rightPic' }
+    //     ],
+    //     layout: 'radio'
+    //   },
+    //   hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+    // },
     {
       name: 'mainImage',
       type: 'mainImage',
@@ -130,16 +130,22 @@ export default {
       hidden: ({ parent }) =>
         parent.imageSize !== 'FullScreenPic' && parent.imageSize !== 'FullScreenPicVideo'
     },
+
+    {
+      name: 'topSecCta',
+      title: 'White Section Cta',
+      type: 'cta',
+      fieldset: 'whiteContent',
+      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+    },
     {
       name: 'youTubeLink',
-      title: 'Watch Section',
+      title: 'You tube ID ',
       type: 'string',
       fieldset: 'whiteContent',
-      description: 'Paste your YouTube Link Below. Used for the Watch Section ',
+      description: 'Paste your YouTube Id Below. Used for the Watch Section ',
       hidden: ({ parent }) => parent.imageSize !== 'FullScreenPicVideo'
-    },
-
-    
+    }
   ],
   preview: {
     select: {

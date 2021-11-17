@@ -64,7 +64,11 @@ export default {
       name: 'menuPhoto',
       type: 'mainImage',
       title: 'Image for Top Menu',
-      description: 'This will be for the top nav background image'
+      description: 'This will be for the top nav background image',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      }
     },
 
     {
@@ -74,15 +78,27 @@ export default {
       type: 'string',
       hidden: ({ document }) =>
         document.pageTemplate !== 'Partnering Together' &&
-        document.pageTemplate !== 'Customer Showcase'
+        document.pageTemplate !== 'Customer Showcase' &&
+        document.pageTemplate !== 'Read, Watch, Listen'
       // validation: Rule => Rule.required()
+    },
+    {
+      name: 'introText',
+      title: 'Section Intro Text',
+      description: 'This Goes underline the headline',
+      type: 'excerptPortableText',
+      hidden: ({ document }) =>
+        document.pageTemplate !== 'Partnering Together' &&
+        document.pageTemplate !== 'Read, Watch, Listen'
     },
     {
       name: 'mainImage',
       type: 'mainImage',
-      title: 'Image for Background Hro',
+      title: 'Image for Hero',
       description: 'This will be for the top nav background image',
-      hidden: ({ document }) => document.pageTemplate !== 'Partnering Together'
+      hidden: ({ document }) =>
+        document.pageTemplate !== 'Partnering Together' &&
+        document.pageTemplate !== 'Read, Watch, Listen'
     },
     // {
     //   title: 'Use Section title?',
@@ -91,13 +107,6 @@ export default {
     //   name: 'useSiteTitle',
     //   type: 'boolean'
     // },
-    {
-      name: 'introText',
-      title: 'Section Intro Text',
-      description: 'This Goes underline the headline',
-      type: 'excerptPortableText',
-      hidden: ({ document }) => document.pageTemplate !== 'Partnering Together'
-    },
 
     {
       name: 'pageSections',
