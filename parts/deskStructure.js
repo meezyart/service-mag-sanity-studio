@@ -53,7 +53,7 @@ const hiddenDocTypes = listItem =>
 
 export default () =>
   S.list()
-    .title('Work Flow Content')
+    .title('ServiceNow Employee Workflows')
     .items([
       // S.divider(),
       S.documentTypeListItem('editions')
@@ -107,37 +107,37 @@ export default () =>
       //         // .icon(MdApps)
       //     ])
       // ),
-      S.listItem()
-        .title('Press')
-        .icon(MdRssFeed)
-        .child(
-          S.list()
-            .title('Articles')
-            .items([
-              S.documentTypeListItem('article')
-                .title('All Articles')
-                .icon(MdCollectionsBookmark)
-              // S.listItem()
-              // .title('Articles By Category')
-              // .icon(MdCollectionsBookmark)
-              // .child(
-              //     S.documentTypeList('pressCategory')
-              //     .title('Articles By Category')
-              //     .child(catId =>
-              //         S.documentList()
-              //         .schemaType('article')
-              //         .title('Articles')
-              //         .filter('_type == "article" && $catId in categories[]._ref')
-              //         .params({
-              //             catId
-              //         })
-              //     )
-              // ),
-              // S.documentTypeListItem('pressCategory')
-              // .title('Categories')
-              // .icon(MdApps)
-            ])
-        ),
+      // S.listItem()
+      //   .title('Press')
+      //   .icon(MdRssFeed)
+      //   .child(
+      //     S.list()
+      //       .title('Articles')
+      //       .items([
+      //         S.documentTypeListItem('article')
+      //           .title('All Articles')
+      //           .icon(MdCollectionsBookmark)
+      //         // S.listItem()
+      //         // .title('Articles By Category')
+      //         // .icon(MdCollectionsBookmark)
+      //         // .child(
+      //         //     S.documentTypeList('pressCategory')
+      //         //     .title('Articles By Category')
+      //         //     .child(catId =>
+      //         //         S.documentList()
+      //         //         .schemaType('article')
+      //         //         .title('Articles')
+      //         //         .filter('_type == "article" && $catId in categories[]._ref')
+      //         //         .params({
+      //         //             catId
+      //         //         })
+      //         //     )
+      //         // ),
+      //         // S.documentTypeListItem('pressCategory')
+      //         // .title('Categories')
+      //         // .icon(MdApps)
+      //       ])
+      //   ),
 
       // S.documentTypeListItem('route')
       // .title('Page Routes')
@@ -146,47 +146,47 @@ export default () =>
       // .title('Menus')
       // .icon(MdMenu),
       S.divider(),
-      S.listItem()
-        .title('Sections')
-        .icon(MdViewAgenda)
-        .child(
-          S.list()
-            .title('Site Sections')
-            .items([
-              S.listItem()
-                .title('Header')
-                .icon(MdViewAgenda)
-                .child(
-                  S.document()
-                    .title('Header')
-                    .schemaType('sectionsHeader')
-                    .documentId('sectionsHeader')
-                ),
-              S.listItem()
-                .title('Footer')
-                .icon(MdViewAgenda)
-                .child(
-                  S.document()
-                    .title('Footer')
-                    .schemaType('sectionsFooter')
-                    .documentId('sectionsFooter')
-                ),
-              S.listItem()
-                .title('Mobile')
-                .icon(MdViewAgenda)
-                .child(
-                  S.document()
-                    .title('Mobile')
-                    .schemaType('sectionsMobile')
-                    .documentId('sectionsMobile')
-                )
-            ])
-        ),
-      S.listItem()
-        .title('Menus')
-        .icon(MdMenu)
-        .schemaType('menu')
-        .child(S.documentTypeList('menu').title('Navigation Menus')),
+      // S.listItem()
+      //   .title('Sections')
+      //   .icon(MdViewAgenda)
+      //   .child(
+      //     S.list()
+      //       .title('Site Sections')
+      //       .items([
+      //         S.listItem()
+      //           .title('Header')
+      //           .icon(MdViewAgenda)
+      //           .child(
+      //             S.document()
+      //               .title('Header')
+      //               .schemaType('sectionsHeader')
+      //               .documentId('sectionsHeader')
+      //           ),
+      //         // S.listItem()
+      //         //   .title('Footer')
+      //         //   .icon(MdViewAgenda)
+      //         //   .child(
+      //         //     S.document()
+      //         //       .title('Footer')
+      //         //       .schemaType('sectionsFooter')
+      //         //       .documentId('sectionsFooter')
+      //         //   ),
+      //         S.listItem()
+      //           .title('Mobile')
+      //           .icon(MdViewAgenda)
+      //           .child(
+      //             S.document()
+      //               .title('Mobile')
+      //               .schemaType('sectionsMobile')
+      //               .documentId('sectionsMobile')
+      //           )
+      //       ])
+      //   ),
+      // S.listItem()
+      //   .title('Menus')
+      //   .icon(MdMenu)
+      //   .schemaType('menu')
+      //   .child(S.documentTypeList('menu').title('Navigation Menus')),
       // S.listItem()
       // .title('Page Builder')
       // .icon(MdDescription)
@@ -228,15 +228,15 @@ export default () =>
                     .schemaType('settingsSeo')
                     .documentId('settingsSeo')
                 ),
-              S.listItem()
-                .title('Favicons')
-                .icon(MdLanguage)
-                .child(
-                  S.document()
-                    .title('Favicons')
-                    .schemaType('settingsFavicons')
-                    .documentId('settingsFavicons')
-                ),
+              // S.listItem()
+              //   .title('Favicons')
+              //   .icon(MdLanguage)
+              //   .child(
+              //     S.document()
+              //       .title('Favicons')
+              //       .schemaType('settingsFavicons')
+              //       .documentId('settingsFavicons')
+              //   ),
               S.listItem()
                 .title('Social')
                 .icon(MdPeople)
@@ -282,15 +282,15 @@ export default () =>
               //     .schemaType('settingsCookie')
               //     .documentId('settingsCookie')
               // ),
-              S.listItem()
-                .title('Site Logo')
-                .icon(MdDonutSmall)
-                .child(
-                  S.document()
-                    .title('Site Logo')
-                    .schemaType('settingsLogo')
-                    .documentId('settingsLogo')
-                )
+              // S.listItem()
+              //   .title('Site Logo')
+              //   .icon(MdDonutSmall)
+              //   .child(
+              //     S.document()
+              //       .title('Site Logo')
+              //       .schemaType('settingsLogo')
+              //       .documentId('settingsLogo')
+              //   )
             ])
         )
     ])

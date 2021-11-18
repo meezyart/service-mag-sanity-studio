@@ -7,7 +7,7 @@ import articlePage from './documents/page'
 // workflow
 import editions from './documents/editions'
 
-import testimonialBlock from './documents/testimonial'
+// import testimonialBlock from './documents/testimonial'
 import article from './documents/articles/article'
 import articleCategory from './documents/articles/category'
 import sectionsHeader from './documents/sections/header'
@@ -46,7 +46,7 @@ import navDropDown from './objects/blocks/navDropdown'
 import dykSection from './objects/sections/didYou'
 import picContentSection from './objects/sections/picContent'
 import richTextSection from './objects/sections/richText'
-import testimonialSection from './objects/sections/testimonials'
+// import testimonialSection from './objects/sections/testimonials'
 import latestArticlesSection from './objects/sections/latestArticles'
 import heroSection from './objects/sections/heroBanner'
 import tomSection from './objects/sections/timeOfMind'
@@ -81,11 +81,11 @@ export default createSchema({
         articleCategory,
         // Primitive
         contactBlock,
-        testimonialBlock,
+        // testimonialBlock,
         picContentSection,
         heroSection,
         iconBlock,
-        testimonialSection,
+        // testimonialSection,
         // Work Flow related
         linkList,
         editions,
