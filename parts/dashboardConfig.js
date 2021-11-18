@@ -36,7 +36,7 @@ export default {
           {
             buildHookId: '616b9be9a4aa9e21f2c7eac4',
             title: 'Service Now Employee Workflow',
-            name: 'servicenow-sanity-11-ty',
+            name: 'service-now-magazine',
             apiId: 'fb2ffd0b-64be-4bd4-8ae5-7496bd96bd0c'
           }
         ]
