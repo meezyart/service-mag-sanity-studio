@@ -131,13 +131,13 @@ export default {
         parent.imageSize !== 'FullScreenPic' && parent.imageSize !== 'FullScreenPicVideo'
     },
 
-    {
-      name: 'topSecCta',
-      title: 'White Section Cta',
-      type: 'cta',
-      fieldset: 'whiteContent',
-      hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
-    },
+    // {
+    //   name: 'topSecCta',
+    //   title: 'White Section Cta',
+    //   type: 'cta',
+    //   fieldset: 'whiteContent',
+    //   hidden: ({ parent }) => parent.imageSize !== 'FullScreenPic'
+    // },
     {
       name: 'youTubeLink',
       title: 'You tube ID ',

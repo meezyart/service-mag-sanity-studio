@@ -21,7 +21,7 @@ export default {
       type:'string',
       description: 'This is used for the Table of content link color'
     },
-    
+
     {
       title: 'URL',
       name: 'url',

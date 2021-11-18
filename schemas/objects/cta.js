@@ -31,8 +31,8 @@ export default {
     },
     {
       title: 'External link',
-      name: 'link',
-      type: 'string',
+      name: 'url',
+      type: 'url',
       description: 'Example: https://www.servicenow.com',
       fieldset: 'link',
       validation: Rule => Rule.uri({ scheme: ['tel', 'mailto', 'http', 'https'] })

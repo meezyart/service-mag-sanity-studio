@@ -37,13 +37,6 @@ export default {
       ],
       lists: [
         {
-          title: 'Green Bullets',
-          value: 'greenBullet',
-          blockEditor: {
-            icon: FaListUl
-          }
-        },
-        {
           title: 'Regular Bullets',
           value: 'bullet',
 
@@ -72,7 +65,7 @@ export default {
           {
             name: 'internalLink',
             type: 'object',
-            title: 'Internal link',
+            title: '(A) Internal Page',
             blockEditor: {
               icon: FiLink
             },
@@ -80,12 +73,17 @@ export default {
               {
                 name: 'reference',
                 type: 'reference',
-                title: '(A) Internal Page',
-                to: [{ type: 'article' }, { type: 'page' }]
+                title: 'Internal Page',
+                to: [{ type: 'page' }]
               },
               {
                 title: 'Style with Arrow?',
                 name: 'isArrow',
+                type: 'boolean'
+              },
+              {
+                title: 'Open new tab?',
+                name: 'openInNewTab',
                 type: 'boolean'
               }
             ]
@@ -99,14 +97,20 @@ export default {
             },
             fields: [
               {
-                name: 'href',
+                name: 'url',
                 type: 'url',
                 title: 'URL',
-                description: 'This link will open in a new tab.'
+                description: 'This link will open in a new tab.',
+                validation: Rule => Rule.uri({ scheme: ['tel', 'mailto', 'http', 'https'] })
               },
               {
                 title: 'Style with Arrow?',
                 name: 'isArrow',
+                type: 'boolean'
+              },
+              {
+                title: 'Open new tab?',
+                name: 'openInNewTab',
                 type: 'boolean'
               }
             ]
